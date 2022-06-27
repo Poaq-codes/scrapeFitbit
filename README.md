@@ -16,4 +16,4 @@ A few things have to be modified/set up by the user:
 
 Generally, once it's set up, the script can be run from whatever directory it's in with `python3 scrapeFitbit.py`.
 
-Since this script grabs data for the past week, you should run it once a week at roughly the same time. If you're on Linux (maybe Mac, but I'm not sure), the easiest way to do this is to set up a cronjob to execute the script.
+Since this script grabs data for the past week, you should run it once a week at roughly the same time. If you're on Linux (maybe Mac, but I'm not sure), the easiest way to do this is to set up a cronjob to execute the script. I assume there's something similar for Windows to accomplish the same thing, but I'm not familiar.
