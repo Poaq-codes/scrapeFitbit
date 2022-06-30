@@ -29,7 +29,7 @@ For some reason, Fitbit only gives you heartrate and... many other things if you
 
 This functions essentially the same as described above, so follows those steps for setup. The only big differences:
 
-  1) Username and password go to lines 56 and 59, respectively.
+  1) Webdriver path is line 27, Username and password go to lines 56 and 59, respectively.
   2) Most importantly, **YOU MUST VERIFY YOUR DOWNLOAD REQUEST VIA EMAIL.** Part of downloading the archive sends an email to your fitbit account email address, and you have to click the link contained in the email. I did not automate this because it requires access to your email account and can vary based on who hosts that account (gmail vs. protonmail vs. outlook, etc.), but it's something I may work on later.
 
 You are technically limited to 1 request per 24 hour period with this. Further, each request "lasts" about 7 days.
