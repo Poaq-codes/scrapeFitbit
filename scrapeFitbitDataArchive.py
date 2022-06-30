@@ -69,7 +69,7 @@ requestButton.click()
 # you MUST respond to an email here
 
 # we can maybe use the "resend code" button to check for if the code has been verified
-while driver.find_elements_by_xpath('//button[text()="Resend Code"]'):
+while driver.find_elements_by_xpath('//button[text()="Resend Email"]'):
     time.sleep(180)
     driver.refresh()
     time.sleep(10)
