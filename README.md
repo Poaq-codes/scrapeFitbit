@@ -1,4 +1,5 @@
 # scrapeFitbit
+A couple of scripts to help download your fitbit data without having to do it manually. Amenable to integration into cronjobs (only slight exception is the archive download has a limit of 1 request per 24 hours).
 
 ## scrapeFitbitData.py
 Python script that uses selenium to download the data export csv file for THE PAST WEEK.
@@ -30,3 +31,5 @@ This functions essentially the same as described above. The only big differences
 
   1) Username and password go to lines 56 and 59, respectively.
   2) Most importantly, **YOU MUST VERIFY YOUR DOWNLOAD REQUEST VIA EMAIL.** Part of downloading the archive sends an email to your fitbit account email address, and you have to click the link contained in the email. I did not automate this because it requires access to your email account and can vary based on who hosts that account (gmail vs. protonmail vs. outlook, etc.), but it's something I may work on later.
+
+You are technically limited to 1 request per 24 hour period with this. Further, each request "lasts" about 7 days.
