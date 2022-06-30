@@ -15,7 +15,7 @@ A few things have to be modified/set up by the user:
   4) The path in line 41 or 48 needs to be changed to wherever you kept your chrome webdriver file. For Linux, this can be basically anywhere as long as you provide the full path. For Windows, it seems to be easiest to keep it in `Program Files (x86)`.
   5) Line 73 should be replaced with your Fitbit email address
   6) Line 76 should be replaced with your Fitbit account password
-  7) DISABLE 2 FACTOR AUTHENTICATION ON FITBIT. If you have it enabled, selenium won't be able to continue on because of the required manual input of the security code.
+  7) **DISABLE 2 FACTOR AUTHENTICATION ON FITBIT**. If you have it enabled, selenium won't be able to continue on because of the required manual input of the security code.
 
 Generally, once it's set up, the script can be run from whatever directory it's in with `python3 scrapeFitbitData.py`.
 
@@ -27,7 +27,7 @@ Python script that uses selenium to download complete data archive.
 
 For some reason, Fitbit only gives you heartrate and... many other things if you download your account's entire archive.
 
-This functions essentially the same as described above. The only big differences:
+This functions essentially the same as described above, so follows those steps for setup. The only big differences:
 
   1) Username and password go to lines 56 and 59, respectively.
   2) Most importantly, **YOU MUST VERIFY YOUR DOWNLOAD REQUEST VIA EMAIL.** Part of downloading the archive sends an email to your fitbit account email address, and you have to click the link contained in the email. I did not automate this because it requires access to your email account and can vary based on who hosts that account (gmail vs. protonmail vs. outlook, etc.), but it's something I may work on later.
