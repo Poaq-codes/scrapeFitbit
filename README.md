@@ -1,6 +1,10 @@
 # scrapeFitbit
 A couple of scripts to help download your fitbit data without having to do it manually. Amenable to integration into cronjobs (only slight exception is the archive download has a limit of 1 request per 24 hours).
 
+** 2FA MUST BE DISABLED ON YOUR ACCOUNT FOR THIS TO WORK**
+
+Fitbit's 2FA requires you to manually enter text codes, which makes it not amenable to automation via crontab.
+
 ## scrapeFitbitData.py
 Python script that uses selenium to download the data export csv file for THE PAST WEEK.
 
