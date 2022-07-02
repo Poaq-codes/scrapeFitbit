@@ -66,29 +66,50 @@ time.sleep(10)
 requestButton = driver.find_element_by_xpath('//button[text()="Request Data"]')
 requestButton.click()
 
-# you MUST respond to an email here
 
-# we can maybe use the "resend code" button to check for if the code has been verified
+########## you MUST respond to an email here ##########
+
+# wait for page to load or it breaks
+time.sleep(10)
+
+# we can maybe use the "resend email" button to check for if the code has been verified
+# empty list is falsey, so we don't need to explicitly check len()
 while driver.find_elements_by_xpath('//button[text()="Resend Email"]'):
+    print("waiting for email confirmation...")
     time.sleep(180)
+    print("refreshing page")
     driver.refresh()
     time.sleep(10)
+    
+print("Email confirmed")
+
+########## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##########
+
+
+# Have to make sure we're finding the "correct" cancel request, so build in a wait here too
+time.sleep(10)
 
 # now we wait for the data to be prepared for download
 # check if it's ready by seeing if we can cancel the request
-# empty list is falsey, so we don't need to explicitly check len()
 # refresh page at each check
 while driver.find_elements_by_xpath('//button[text()="Cancel Request"]'):
+    print("waiting for data preparation...")
     time.sleep(180)
+    print("refreshing page")
     driver.refresh()
     time.sleep(10)
+    
+print("File prepared")
 
 # grab Download buttons
 buttons = driver.find_elements_by_xpath('//button[text()="Download"]')
 
 # we want specifically the second one
+print("Downloading zip...")
 button = buttons[1]
 button.click()
+
+
 
 # give zip time to download
 time.sleep(60)
