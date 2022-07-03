@@ -44,7 +44,7 @@ driver = webdriver.Chrome(service = PATH, options = options)
 ########## ~~~~~~~~~~~~~~~ ##########
 
 #%%
-# Get logged hours
+# Get archive
 # -------------- #
 
 ## point to the website and open browser
