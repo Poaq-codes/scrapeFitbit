@@ -37,3 +37,31 @@ This functions essentially the same as described above, so follows those steps f
   2) Most importantly, **YOU MUST VERIFY YOUR DOWNLOAD REQUEST VIA EMAIL.** Part of downloading the archive sends an email to your fitbit account email address, and you have to click the link contained in the email. I did not automate this because it requires access to your email account and can vary based on who hosts that account (gmail vs. protonmail vs. outlook, etc.), but it's something I may work on later.
 
 You are technically limited to 1 request per 24 hour period with this. Further, each request "lasts" about 7 days, so you can download old requests up to a week after the intial request.
+
+
+## uploadData.R
+An R script that makes use of the [googledrive](https://googledrive.tidyverse.org/) R package to upload results from fitbit webscraping to Google Drive. You can download R [here](https://cloud.r-project.org/). You next need to install the `googledrive` package:
+
+  1) Launch R
+  2) type `install.packages('googledrive')`, and the package will be downloaded and installed
+  3) Close R
+
+Next, we need to set up `googledrive` to work with your account:
+
+  1) Launch R
+  2) type `drive_auth()` -- this will prompt a few things. The main thing here is we're giving the package permission to edit your google drive.
+  3) Allow R to store the token between sessions
+  4) A webpage should pop up asking you to sign into your Google account
+  5) Sign in your account
+  6) Check the bottom box to give the tidyverse/googledrive permission to create, edit, and delete files
+  7) Close R
+
+Now, edit the R script with your information:
+
+  1) Line 21 - enter your email
+  2) Line 29 - paste the link to the folder on google drive that will hold your data
+  3) Line 34 - enter the path to your local file that you're trying to upload
+  4) OPTIONAL - Line 40 - enter the file name here if it's not the default fitbit name for the current date
+  5) Lines 52, 57, 63 the same as 2-4 above, but for fitbit archive data
+
+If you don't want either the archive or non-archive data upload, simply comment out the lines.
