@@ -65,3 +65,5 @@ Now, edit the R script with your information:
   5) Lines 52, 57, 63 the same as 2-4 above, but for fitbit archive data
 
 If you don't want either the archive or non-archive data upload, simply comment out the lines.
+
+To run the script, open a console and type `Rscript uploadData.R`.
