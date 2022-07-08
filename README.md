@@ -66,4 +66,4 @@ Now, edit the R script with your information:
 
 If you don't want either the archive or non-archive data upload, simply comment out the lines.
 
-To run the script, open a console and type `Rscript uploadData.R`.
+To run the script, open a console, navigate to the directory holding the script, and type `Rscript uploadData.R`.
