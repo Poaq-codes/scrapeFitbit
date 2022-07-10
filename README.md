@@ -67,3 +67,19 @@ Now, edit the R script with your information:
 If you don't want either the archive or non-archive data upload, simply comment out the lines.
 
 To run the script, open a console, navigate to the directory holding the script, and type `Rscript uploadData.R`.
+
+
+## downloadData.R
+This script is essentially a companion script to `uploadData.R`. It is not generally needed unless you plan on primarily storing your data on google drive instead of locally.
+
+I recommend having a working directly that is empty except for the fitbit files you're about to download. Because `drive_download` doesn't seem to play nicely with lists of files being saved to non-working directory locations, these files must first be downloaded to the current working directory, then moved to their respective destination directories. This means that any other files in the working directory with `.csv` or `.zip` extensions will be caught up in the move operation.
+
+Setup is the same as `uploadData.R`, but additionally requires the [purrr](https://purrr.tidyverse.org/) package. You can either install `purrr` alone, or install the entire `tidyverse` package. Either way will allow access to the package.
+
+Edit the following lines:
+
+  1) Line 21 - enter your email
+  2) Lines 36 and 60 - enter the paths to your local storage directories for fitbit weekly downloads and fitbit archive downloads, respectively
+  3) 39 and 63 - enter the google drive folder links to where your fitbit weekly downloads and fitbit archive downloads are, respectively
+ 
+ The script can be execited from command line with `Rscript downloadData.R`.
