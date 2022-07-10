@@ -69,10 +69,10 @@ driver.get("https://accounts.fitbit.com/login?targetUrl=https%3A%2F%2Fwww.fitbit
 time.sleep(10)
 
 ## find username and password fields and enter them
-username = driver.find_element_by_xpath("//input[@placeholder='Your email address']")
+username = driver.find_element_by_xpath("//input[@placeholder='Your account email']")
 username.send_keys("youremailaddress@email.com")
 
-password = driver.find_element_by_xpath("//input[@placeholder='Enter your password']")
+password = driver.find_element_by_xpath("//input[@placeholder='Enter your secure password']")
 password.send_keys("yourfitbitpasswordhere")
 password.send_keys(Keys.RETURN)
 
