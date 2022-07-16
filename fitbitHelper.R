@@ -11,6 +11,32 @@
 # library(tidyverse)
 # library(lubridate)
 
+
+# makes a dataframe containing any metadata
+# must have an associated column called "date," not case-sensitive
+# tries to work out a few different date formats to end with YYYY-MM-DD
+makeMetaData <- function(file_list){
+  tmp <- lapply(file_list, fread, sep = "auto")
+  meta <- rbindlist(tmp)
+  
+  # set column names to upper for consistency down the line
+  colnames(meta) <- toupper(colnames(meta))
+  
+  # dealing with multiple date formats: 
+  #   https://stackoverflow.com/questions/13764514/how-to-change-multiple-date-formats-in-same-column
+  mdy <- mdy(meta$DATE) 
+  dmy <- dmy(meta$DATE) 
+  # some dates are ambiguous, here we give mdy precedence over dmy 
+  mdy[is.na(mdy)] <- dmy[is.na(mdy)]
+  meta$DATE <- mdy
+  
+  # set Date class
+  meta$DATE <- as.Date(meta$DATE)
+  
+  return(meta)
+}
+
+
 # converts column called "Date" into class Date
 # can be ignored -- called later in `makeFitbitWeeklyDataframe`
 makeDateClass <- function(df_list){
@@ -123,7 +149,7 @@ makeFitbitWeeklyDataframe <- function(file_list){
   # need to collapse duplicated dates
   # this will remove any date containing NAs
   # this occurs at "breakpoint" dates between weeks if it's not "duplicated"
-  final <- collapse(df = fitbit)
+  final <- suppressWarnings(collapse(df = fitbit))
   
   return(final)
 }
