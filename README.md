@@ -41,6 +41,14 @@ This functions essentially the same as described above, so follows those steps f
 You are technically limited to 1 request per 24 hour period with this. Further, each request "lasts" about 7 days, so you can download old requests up to a week after the intial request.
 
 
+## scrapeTimeLogData.py
+Python script meant to automate a *weekly* download of data from the [aTimeLogger](http://www.atimelogger.com/) app. Specifically from their webpage, which can be found [here](https://app.atimelogger.com/#/signin).
+
+Lines of code to edit:
+  1) 57 and 60 - email and password
+  2) Line 70 can be edited to change the time frame the download covers (the default of the script is 1 week). Python is 0 indexed, so option 1 is "0", option 2 is "1", etc. Just take a look at the dropdown options on the webpage and see which you prefer.
+
+
 ## uploadData.R
 An R script that makes use of the [googledrive](https://googledrive.tidyverse.org/) R package to upload results from fitbit webscraping to Google Drive. You can download R [here](https://cloud.r-project.org/). You next need to install the `googledrive` package:
 
