@@ -63,6 +63,7 @@ Now, edit the R script with your information:
   3) Line 34 - enter the path to your local file that you're trying to upload
   4) OPTIONAL - Line 40 - enter the file name here if it's not the default fitbit name for the current date
   5) Lines 52, 57, 63 the same as 2-4 above, but for fitbit archive data
+  6) 74 and 77 - google drive link and local directory
 
 If you don't want either the archive or non-archive data upload, simply comment out the lines.
 
