@@ -75,3 +75,24 @@ for (file in archive_files){
 }
 
 
+#~~~~~~~~~~~~~~~~~~#
+# download time log ----
+#~~~~~~~~~~~~~~~~~~#
+# make variables for target dir
+time_log_dir <- "local/directory/for/time/log/files"
+
+# folder on google drive with our files
+td_time_log <- drive_get("TIME LOG DOWNLOAD FOLDER LINK")
+
+# make a list of the csv files in that folder
+csv_files <- drive_ls(td_time_log, type = "csv")
+
+# walk down the list and download each file
+walk(csv_files$id, ~ drive_download(as_id(.x)))
+
+# since we have to download to wd, we need to move the files
+time_log_files <- list.files(pattern = ".csv")
+for (file in time_log_files){
+  file.rename(from = paste0(wd, "/", file),
+              to = paste0(time_log_dir, file))
+}
