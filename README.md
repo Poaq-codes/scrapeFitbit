@@ -81,5 +81,6 @@ Edit the following lines:
   1) Line 21 - enter your email
   2) Lines 36 and 60 - enter the paths to your local storage directories for fitbit weekly downloads and fitbit archive downloads, respectively
   3) 39 and 63 - enter the google drive folder links to where your fitbit weekly downloads and fitbit archive downloads are stored, respectively
+  4) 82 and 85 - enter local directory and google drive folder for time log data 
  
  The script can be executed from command line with `Rscript downloadData.R`.
