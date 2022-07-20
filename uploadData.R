@@ -2,8 +2,8 @@
 # Author: Poaq
 # Date: 2022-06-07
 #
-# Purpose: 1) Automatically sync Fitbit 
-#             data to Google Drive
+# Purpose: 1) Automatically sync Fitbit and 
+#             timelogger data to Google Drive
 ##################################################
 
 #~~~~~~~~~~~~~~~~~~#
@@ -66,3 +66,20 @@ fitbit_archive_string <- paste0("MyFitbitData.zip")
 drive_upload(media = paste0(fitbit_archive_dir, fitbit_archive_string), path = as_id(td_archive),
              name = fitbit_archive_string)
 
+			 
+#~~~~~~~~~~~~~~~~~~#
+# sync time log data to google drive ----
+#~~~~~~~~~~~~~~~~~~#
+# the directory on google drive that will hold our data
+td_time <- drive_get("LINK TO FOLDER GOES HERE")
+
+# the directory where our data is stored locally
+time_dir <- paste0("C:/path/to/log/folder")
+
+# filename
+# default from the app
+time_string <- "report.csv"
+
+# upload the file
+drive_upload(media = paste0(time_dir, time_string), path = as_id(td_time),
+             name = time_string)
