@@ -1,5 +1,5 @@
 # scrapeFitbit
-Apparently I am integrating a bit more than Fitbit, but... yeah. That was the original intent.
+**Apparently I am integrating a bit more than Fitbit, but... yeah. That was the original intent.**
 
 A couple of scripts to help download your fitbit data without having to do it manually. Amenable to integration into cronjobs (only slight exception is the archive download has a limit of 1 request per 24 hours).
 
